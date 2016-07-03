@@ -1,10 +1,12 @@
-﻿using GothicStarter.Utils;
+﻿using GothicStarter.Data;
+using GothicStarter.Utils;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace Test
 {
@@ -12,7 +14,7 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            Image img = ImageUtils.LoadZTEXImage("test.tex");
+            
         }
     }
 }

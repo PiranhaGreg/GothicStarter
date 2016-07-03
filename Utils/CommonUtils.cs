@@ -10,7 +10,7 @@ namespace GothicStarter.Utils
     {
         /// <summary>
         /// Pro každý blok o velikosti <paramref name="blockSize"/> otočí pořadí všech prvků.
-        /// př. blockSize = 2: [1, 2, 3, 4, 5, 6 ] -> [2, 1, 4, 3, 6, 5 ]
+        /// př. blockSize = 2: [1, 2, 3, 4, 5, 6 ] -> [2, 1, 4, 3, 6, 5 ].
         /// </summary>
         /// <param name="data">Velikost dat musí být dělitelná počtem prvků.</param>
         public static void SwapElementsInBlocks<T>(this T[] data, int blockSize)
@@ -25,5 +25,17 @@ namespace GothicStarter.Utils
                 }
             }
         }
+
+        /// <summary>
+        /// Vrátí defaudní hodnotu <paramref name="TValue"/>, pokud klíč v <paramref name="dictionary"/> neexistuje.
+        /// </summary>
+        public static TValue Get<TKey, TValue>(this Dictionary<TKey, TValue> dictionary, TKey key) 
+            => dictionary.ContainsKey(key) ? dictionary[key] : default(TValue);
+
+        /// <summary>
+        /// Rozdělí text podle <paramref name="delimiter"/>. Prázdné části zahodí.
+        /// </summary>
+        public static string[] Split(this string value, string delimiter) 
+            => value.Split(new string[] { delimiter }, StringSplitOptions.RemoveEmptyEntries);
     }
 }
